@@ -1,0 +1,35 @@
+/* src/pages/About.css */
+.page-title {
+  color: var(--burnt-orange);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--burnt-orange);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.about-text {
+  background: var(--white);
+  border: 2px solid var(--burnt-orange);
+  padding: 2rem;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}

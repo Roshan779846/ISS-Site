@@ -1,0 +1,205 @@
+/* src/components/Header.css */
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #594c41;
+  --button-color: #594c41;
+  --white: #ffffff;
+}
+
+.navbar {
+  background-color: var(--bg-color);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  font-family: "Arial", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--button-color);
+  text-decoration: underline;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fa-search {
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.language-selector {
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.apply-button {
+  background-color: var(--button-color);
+  color: var(--bg-color);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #473d34;
+}
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-content {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: var(--bg-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .navbar-content.active {
+    right: 0;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .navbar-actions {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .fa-search,
+  .language-selector {
+    display: none;
+  }
+}
+
+/* src/components/Header.css */
+.navbar {
+  background-color: var(--bg-color);
+  padding: 0.8rem 1.5rem; /* Reduced padding for smaller size */
+  position: fixed;
+  top: 10px; /* Added space from top */
+  left: 15px; /* Added space from left */
+  right: 15px; /* Added space from right */
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px; /* Rounded edges */
+  overflow: hidden; /* Ensures child elements respect border radius */
+  margin: 0 auto; /* Centers the header */
+  max-width: calc(100% - 30px); /* Accounts for left/right spacing */
+}
+
+/* Rest of the CSS remains the same until mobile queries */
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 8px;
+    left: 10px;
+    right: 10px;
+    max-width: calc(100% - 20px);
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+  }
+
+  .navbar-content {
+    top: 56px; /* Adjusted for smaller header height */
+    right: -100%;
+    height: calc(100vh - 56px);
+  }
+
+  .logo-img {
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+
+/* Add this media query for very small screens */
+@media (max-width: 480px) {
+  .navbar {
+    border-radius: 8px;
+    left: 8px;
+    right: 8px;
+    max-width: calc(100% - 16px);
+  }
+}
